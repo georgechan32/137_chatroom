@@ -3,9 +3,10 @@ import sys
 from threading import Thread
 from time import sleep
 
-
+#View
 myname = raw_input('What is your name? ')
 
+#Model
 class Client(Handler):
     
     def on_close(self):
@@ -18,6 +19,7 @@ host, port = 'localhost', 8888
 client = Client(host, port)
 client.do_send({'join': myname})
 
+
 def periodic_poll():
     while 1:
         poll()
@@ -27,6 +29,13 @@ thread = Thread(target=periodic_poll)
 thread.daemon = True  # die when the main thread dies 
 thread.start()
 
-while 1:
-    mytxt = sys.stdin.readline().rstrip()
-    client.do_send({'speak': myname, 'txt': mytxt})
+v_continue = True
+
+#Controller
+while v_continue:
+    mytxt = raw_input(myname + '>> ')
+    if mytxt == ":q":
+        client.do_close()
+        v_continue = False
+    else:
+        client.do_send({'speak': myname, 'txt': mytxt})
