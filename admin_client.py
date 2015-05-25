@@ -3,8 +3,6 @@ import sys
 from threading import Thread
 from time import sleep
 
-
-
 #Model
 class Client(Handler):
     
@@ -17,9 +15,8 @@ class Client(Handler):
         
 host, port = 'localhost', 8888
 client = Client(host, port)
-client.do_send({'join': "Me"})
+client.do_send({'join': "Admin"})
 #client.on_msg('yes')
-#View
 
 def periodic_poll():
     while 1:
@@ -34,9 +31,9 @@ v_continue = True
 
 #Controller
 while v_continue:
-    mytxt = raw_input("Me " + ' >> ')
+    mytxt = raw_input("Admin " + ' >> ')
     if mytxt == ":q":
         client.do_close()
         v_continue = False
     else:
-        client.do_send("Me" + '|' + mytxt)
+        client.do_send("Admin " + '|' + mytxt)
