@@ -7,7 +7,7 @@ from time import sleep
 def beep():
     print("\a") #USING Python 3 print function or else it wont work for me -Muz
 def getInput():
-    mytemptxt = raw_input("Me " + ' >> ')
+    mytemptxt = input("Me " + ' >> ')
     return mytemptxt
 def print_msg(msg):
     print(msg)
