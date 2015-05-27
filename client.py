@@ -5,12 +5,12 @@ from time import sleep
 
 #View
 def beep():
-    print "\a"
+    print("\a")
 def getInput():
     mytemptxt = raw_input("Me " + ' >> ')
     return mytemptxt
 def print_msg(msg):
-    print msg
+    print(msg)
     global stringSoFar
     stringSoFar = stringSoFar + str(msg) + "\n"
 
@@ -20,6 +20,8 @@ class Client(Handler):
         pass
     def on_msg(self, msg):
         print_msg(msg)
+
+
 def periodic_poll():
     while 1:
         poll()
@@ -53,8 +55,8 @@ def main_funct():
 thread = Thread(target=periodic_poll)
 thread.daemon = True  # die when the main thread dies 
 thread.start()
-topic1 = raw_input("Please select your topic\n 1: Feedback\t2: Complaint\t3: Misc")
-topic2 = raw_input("What is the name of the topic? (20 character limit): ")
+topic1 = input("Please select your topic\n 1: Feedback\t2: Complaint\t3: Misc")
+topic2 = input("What is the name of the topic? (20 character limit): ")
 host, port = 'localhost', 8888
 client = Client(host, port)
 client.do_send({'join': "Me"})

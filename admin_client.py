@@ -10,7 +10,7 @@ class Client(Handler):
         pass
     
     def on_msg(self, msg):
-        print msg
+        print(msg)
 
         
 host, port = 'localhost', 8888
@@ -31,7 +31,7 @@ v_continue = True
 
 #Controller
 while v_continue:
-    mytxt = raw_input("Admin " + ' >> ')
+    mytxt = input("Admin " + ' >> ')
     if mytxt == ":q":
         client.do_close()
         v_continue = False
