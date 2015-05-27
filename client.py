@@ -5,7 +5,7 @@ from time import sleep
 
 #View
 def beep():
-    print("\a")
+    print("\a") #USING Python 3 print function or else it wont work for me -Muz
 def getInput():
     mytemptxt = raw_input("Me " + ' >> ')
     return mytemptxt
@@ -55,7 +55,7 @@ def main_funct():
 thread = Thread(target=periodic_poll)
 thread.daemon = True  # die when the main thread dies 
 thread.start()
-topic1 = input("Please select your topic\n 1: Feedback\t2: Complaint\t3: Misc")
+topic1 = input("Please select your topic\n 1: Feedback\t2: Complaint\t3: Misc") #CHANGE TO INPUT() -Muz 
 topic2 = input("What is the name of the topic? (20 character limit): ")
 host, port = 'localhost', 8888
 client = Client(host, port)
