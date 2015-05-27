@@ -3,7 +3,6 @@ import sys
 from threading import Thread
 from time import sleep
 
-
 #Model
 class Client(Handler):
     
