@@ -3,6 +3,7 @@ import sys
 from threading import Thread
 from time import sleep
 
+
 #Model
 class Client(Handler):
     
@@ -36,4 +37,4 @@ while v_continue:
         client.do_close()
         v_continue = False
     else:
-        client.do_send("Admin " + '|' + mytxt)
+        client.do_send("Admin" + '|' + mytxt)

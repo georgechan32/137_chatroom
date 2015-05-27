@@ -3,14 +3,19 @@ import sys
 from threading import Thread
 from time import sleep
 
-
+myname = raw_input("What is your name? ")
 
 #Model
 class Client(Handler):
     
+    #def on_open(self):
+
+
     def on_close(self):
-        pass
-    
+        #pass
+        client.do_send("ClientClosed")  #ehh...
+        print "Client Closing..."
+
     def on_msg(self, msg):
         print msg
 
@@ -34,7 +39,7 @@ v_continue = True
 
 #Controller
 while v_continue:
-    mytxt = raw_input("Me " + ' >> ')
+    mytxt = raw_input(myname + ' >> ')
     if mytxt == ":q":
         client.do_close()
         v_continue = False
