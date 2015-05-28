@@ -13,7 +13,8 @@ class Client(Handler):
         print(msg)
 
         
-host, port = 'localhost', 8888
+#host, port = 'localhost', 8080
+host, port = 'students.ics.uci.edu/~georgesc/137-project-1/', 8080
 client = Client(host, port)
 client.do_send({'join': "Admin"})
 #client.on_msg('yes')

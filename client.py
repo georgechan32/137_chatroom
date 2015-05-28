@@ -57,7 +57,7 @@ thread.daemon = True  # die when the main thread dies
 thread.start()
 topic1 = input("Please select your topic\n 1: Feedback\t2: Complaint\t3: Misc\n") #CHANGE TO INPUT() -Muz 
 topic2 = input("What is the name of the topic? (20 character limit):\n")
-host, port = 'localhost', 8888
+host, port = 'https://students.ics.uci.edu/~georgesc/137-project-1/server.cgi', 8080
 client = Client(host, port)
 client.do_send({'join': "Me"})
 client.do_send("Me|TOPIC: ("+topic1 +") "+topic2 )
