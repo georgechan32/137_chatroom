@@ -5,12 +5,12 @@ from time import sleep
 
 #View
 def beep():
-    print("\a") #USING Python 3 print function or else it wont work for me -Muz
+    print "\a" 
 def getInput():
-    mytemptxt = input("Me " + ' >> ')
+    mytemptxt = raw_input("Me " + ' >> ') 
     return mytemptxt
 def print_msg(msg):
-    print(msg)
+    print msg
     global stringSoFar
     stringSoFar = stringSoFar + str(msg) + "\n"
 
@@ -55,8 +55,8 @@ def main_funct():
 thread = Thread(target=periodic_poll)
 thread.daemon = True  # die when the main thread dies 
 thread.start()
-topic1 = input("Please select your topic\n 1: Feedback\t2: Complaint\t3: Misc\n") #CHANGE TO INPUT() -Muz 
-topic2 = input("What is the name of the topic? (20 character limit):\n")
+topic1 = raw_input("Please select your topic\n 1: Feedback\t2: Complaint\t3: Misc\n") #CHANGED BACK
+topic2 = raw_input("What is the name of the topic? (20 character limit):\n")
 host, port = 'https://students.ics.uci.edu/~georgesc/137-project-1/server.cgi', 8080
 client = Client(host, port)
 client.do_send({'join': "Me"})
